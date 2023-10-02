@@ -1,0 +1,108 @@
+ Quem sou eu? Fórmula de Baskara 
+1- Resolvo equações de segundo grau
+2- Utilizo seus coeficientes
+3- Encontro raízes
+
+ Quem sou eu ? Teorema de Pitágoras
+1- Sou útil para demonstrar vários resultados matemáticos
+2- Uso a relação dos lados de um triângulo com ângulo reto.
+3- E a soma de dois lados ao quadrado é igual ao quadrado do lado maior
+
+ Quem sou eu ? Método da adição
+1- Sou utilizado em sistemas lineares com duas incógnitas
+2- Normalmente, multiplica-se uma das equações por um nº
+3- Das duas equações dadas uma variável se anula
+
+Quem sou eu ? Método da substituição
+1- Sou utilizado em sistemas lineares com duas incógnitas
+2- Uma variável é isolada
+3- O resultado da segunda variável depende da primeira
+
+ Quem sou eu ? Método da comparação
+1- Sou utilizado em sistemas lineares com duas incógnitas
+2- Uma variável é isolada no sistema
+3- As variáveis são comparadas em ambas equações
+
+ Quem sou eu ? Equação do primeiro grau
+1- Ajudo a encontrar um valor desconhecido
+2- Os elementos desconhecidos são isolados
+3- Os dois lados são iguais
+
+ Quem sou eu ? Função afim
+1- Represento a taxa de crescimento ou taxa de variação
+3- Encontro o valor do coeficinte linear
+
+ Quem sou eu ? Dispositivo Briot Rufinni
+1- Sou usado para fazer divisão de polinômio
+2- Necessito de pelo menos uma raiz real para aplicação
+3- Reduzo o grau do polinômio
+
+
+
+  Quem sou eu ? Método de completar quadrados
+1- Transformo uma equação de grau 2 em trinômio perfeito
+2- Resulto num produto notável
+3- Sou útil para reescrever uma função quadrática
+
+ Quem sou eu ? Teorema de Tales
+1- Traço uma reta paralela à base do triângulo.
+2- Encontro valores desconhecidos em triângulos.
+3- Segmentos da lateral são proporcionais.
+
+ Quem sou eu? Leis dos senos.
+1- Utilizo dois lados e o ângulo oposto a um desses lados.
+2- Uso dois ângulos e o lado oposto a um desses ângulos.
+3- Uso a razão entre eles.
+
+ Quem sou eu? Identidade trigonométrica Pitagórica
+1- Simplifico expressões trigonométricas
+2- Sou derivada do Teorema de Pitágoras 
+
+ Quem sou eu? Identidade de arcos duplos
+1- Simplifico expressões trigonométricas
+2- Utilizo dois ângulos menores chamado de arcos
+   sin(2θ)= 2sin(θ)cos(θ)
+
+ Quem sou eu? Lei dos cossenos
+1- Encontro o comprimento do terceiro lado do triângulo
+2-Normalmente,sou aplicada para triângulo não retângulo.
+
+ Quem sou eu? método de escalonamento
+1- Resolvo equações lineares com três funções e incógnitas
+2- Faço uso de manipulações algébricas
+3- Utilizo matrizes 3X3
+
+Quem sou eu? Regra de Crammer
+1- Resolvo equações lineares com três funções e incógnitas
+2- Calculo o determinante da matriz incompleta e suas variações
+3- As incógnitas são encontadas pela razão dos determinantes
+
+
+ Quem sou eu? Transformada de Fourier
+1- Permito analisar de forma adequada funções periódicas
+2- sou útil em situações onde o comportamento de um sinal varia com o tempo ou espaço
+ 
+ Quem sou eu? Teorema fundamental da álgebra
+1- A quantidade de raízes reais ou complexas, está relacionada com o grau do polinômio
+
+ Quem sou eu? Transformada de Laplace
+1- Analiso sistemas dinâmicos 
+2- Transformo equações diferenciais em equações algébricas
+
+ Quem sou eu? Método de Newton-Raphson 
+1- Encontro aproximações de raízes de funções não-lineares
+2- Sou um método iterativo 
+
+ Quem sou eu? Teorema do valor Médio
+1- Garanto que exista pelo menos uma raiz no intervalo fechado
+
+ Quem sou eu? Equações diferenciais 
+1- Modelam fenômenos que envolvem taxas de variação
+
+ Quem sou eu? Equação de Euler 
+1-Estabeleço uma relação entre números complexos, trigonometria e a constante e
+ 
+ Quem sou eu? Teorema de Fermat
+1- Encontro um máximo ou mínimo local em um número
+
+
