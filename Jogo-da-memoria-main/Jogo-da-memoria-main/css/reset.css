@@ -1,0 +1,10 @@
+/* Um arquivo usado para resetar as configurações de CSS dos browsers a fim de evitar bugs e conflitos com outras configurações CSS. Além disso, a fonte do texto está sendo aplicada aqui. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  border: none;
+  font-family: Black Ops One;
+}

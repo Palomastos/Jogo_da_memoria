@@ -1,0 +1,82 @@
+.form-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #fff, #000);
+}
+
+
+.image img {
+  width: 250px;
+}
+
+
+h1 {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+
+.name-box {
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 250px;
+  outline: none;
+  padding: 10px;
+  background-color: aliceblue;
+  border: 5px solid #210c6bf5;
+  border-radius: 8px;
+}
+
+
+.dificulty-box {
+  display: flex;
+  width: 100%;
+  max-width: 250px;
+  justify-content: space-evenly;
+  background-color: aliceblue;
+  border-radius: 8px;
+  border: 5px solid #210c6bf5;
+}
+
+.box-radio{
+  appearance: none;
+  border: 1px solid #000;
+  margin-left: 5px;
+  margin-top: 3px;
+  width: 1px;
+  height: 1px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.box-radio:checked {
+  background-image: radial-gradient(white 30%, Black 20%);
+}
+
+.button-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 250px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fbff07;
+  font-size: 25px;
+  border: 5px solid #210c6bf5;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.button-play:disabled {
+  background-color: darkgrey;
+  color: grey;
+  cursor: auto;
+  transition: 0.3s;
+
+}
