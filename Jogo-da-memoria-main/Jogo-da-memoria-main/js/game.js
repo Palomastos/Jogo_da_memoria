@@ -3,16 +3,22 @@ const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
 
 const characters = [
-  'beth',
-  'jerry',
-  'jessica',
-  'morty',
-  'pessoa-passaro',
-  'pickle-rick',
-  'rick',
-  'summer',
-  'meeseeks',
-  'scroopy',
+  'easy01',
+  'easy02',
+  'easy03',
+  'easy04',
+  'easy05',
+  'easy06',
+  'easy07',
+  'easy08',
+  'answer_easy01',
+  'answer_easy02',
+  'answer_easy03',
+  'answer_easy04',
+  'answer_easy05',
+  'answer_easy06',
+  'answer_easy07',
+  'answer_easy08',
 ];
 
 const createElement = (tag, className) => {
