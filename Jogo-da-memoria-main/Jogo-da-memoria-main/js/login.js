@@ -35,8 +35,8 @@ const redirectPage = (event) => {
   const choosedDificulty = checkedDificulty()
   localStorage.setItem('dificulty', choosedDificulty)
   localStorage.setItem('player', inputName.value)
-
-  window.location.replace('/Jogo-da-memoria-main/pages/game.html')
+  //Ajuste para tornar o redirecionamento relativo para esta pasta, independente da maquina que o código está sendo executado.
+  window.location.replace('./pages/game.html')  
 }
 
 
