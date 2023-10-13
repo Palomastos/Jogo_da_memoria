@@ -1,12 +1,14 @@
 const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
-const dificulty = localStorage.getItem('dificulty')
+const dificulty = localStorage.getItem('dificulty');
 
 // A const 'accountant' serve para verificar a rodada no qual o player está.
 const accountant = localStorage.getItem('acc');
 // A const 'amountMov' serve para armazenar a quantidade de movimentos que o player fará nas cartas.
 const amountMov = [];
+//
+const stopTime = [];
 
 // A função CheckArray cria três arrays, verifica-as e retorna a arrays dos respectivos níveis 
 // (Easy, medium e hard)
@@ -44,9 +46,9 @@ const checkArray = () => {
   'valorMedio',
   ];
 
-  if (dificulty== 'easy') {return charactersEasy}
-  else if (dificulty=='medium') {return charactersMedium}
-  else {return charactersHard}
+  if (dificulty== 'EASY') {return charactersEasy;}
+  else if (dificulty=='MEDIUM') {return charactersMedium;}
+  else {return charactersHard;}
 }
 const characters = checkArray()
 
@@ -172,7 +174,7 @@ const createCard = (character) => {
   
     // O front.style.backgroundImage, define o caminho da imagem de fundo da face frontal da carta. De acordo
     //com o personagem e o nível de dificuldades associada a carta.
-    front.style.backgroundImage = `url('../images/${dificulty}/${character}.jpg')`;
+    front.style.backgroundImage = `url('/images/${dificulty}/${character}.jpg')`;
 
     // Indica que a função createCard está retornando um valor que é o elemento card (carta) que foi criado
     //  e configurado.
@@ -191,7 +193,7 @@ const loadGame = () => {
     }
     else {
       const card = createCard(characters);
-      grid.appendChild(card)
+      grid.appendChild(card);
       return creaftingCard(otherscharacter, acc+1);
     }
   }
@@ -215,8 +217,8 @@ const startTimer = () => {
         const currentTime = +timer.innerHTML;
         timer.innerHTML = currentTime + 1;
         localStorage.setItem(`time${accountant}`, currentTime);
-        startTimer ()
-      }, 1000)
+        startTimer ();
+      }, 1000);
     }
   }
   // this.loop = setInterval(() => {
