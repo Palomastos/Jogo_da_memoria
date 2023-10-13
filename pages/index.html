@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Pixelify+Sans&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <script defer src="/js/login.js"></script>
+
+  <link rel="shortcut icon" href="/images/Outros/icon.png" type="image/x-icon">
+
+  <title>Login</title>
+</head>
+<body class="body">
+  <form class="form-all">
+    
+    <div class="image">
+      <div> <img src="/images/Outros/logo1.png" alt="Math"> 
+      <h1> MEMORY GAME </h1>
+      </div>
+    </div>
+
+    <input type="text" id="name" placeholder="NAME" class="name-box">
+
+    <div class="dificulty-box">
+      <input name="dif" id="easy" class="box-radio" type="radio" value="easy" checked> 
+      <label for="easy">EASY</label>
+  
+      <input name="dif" id="medium" class="box-radio" type="radio" value="medium">
+      <label for="medium">MEDIUM</label>
+  
+      <input name="dif" id="hard" class="box-radio" type="radio" value="hard">
+      <label for="hard">HARD</label>
+    </div>
+
+    <button type="submit" id="send" class="button-play" disabled>PLAY</button>
+  </form>
+</body>
+
+</html>
