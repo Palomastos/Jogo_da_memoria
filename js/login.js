@@ -36,7 +36,7 @@ const redirectPage = (event) => {
   localStorage.setItem('dificulty', choosedDificulty)
   localStorage.setItem('player', inputName.value)
 
-  window.location.replace('/Jogo-da-memoria-main/pages/game.html')
+  window.location.replace('./pages/game.html')
 }
 
 
