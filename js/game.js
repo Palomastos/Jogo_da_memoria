@@ -14,36 +14,36 @@ const stopTime = [];
 // (Easy, medium e hard)
 const checkArray = () => {
   const charactersEasy = [
-    'adicao',
-    'bhaskara',
-    'briot',
-    'comparacao',
-    'priGrau',
-    'funcAfim',
-    'pitagoras',
-    'substituicao',
+    'Método da Adição',
+    'Fórmula de Bhaskara',
+    'Dispositivo Briot-Ruffini',
+    'Método da Comparação',
+    'Equação do Primeiro Grau',
+    'Função Afim',
+    'Teorema de Pitágoras',
+    'Método da Substituição',
   ];
 
   const charactersMedium = [
-    'complQuadrado',
-    'cramer',
-    'escalonamento',
-    'idArcosDuplos',
-    'idPitagorica',
-    'leiCossenos',
-    'leiSenos',
-    'teoTales',
+    'Método de Completar Quadrado',
+    'Regra de Cramer',
+    'Método de Escalonamento',
+    'Identdade de Arcos Duplos',
+    'Identidade Trigonométrica Pitagórica',
+    'Lei dos Cossenos',
+    'Lei dos Senos',
+    'Teorema de Tales',
   ];
 
   const charactersHard = [
-  'algebra',
-  'edDiferenciais',
-  'euler',
-  'fermat',
-  'fourier',
-  'laplace',
-  'newton',
-  'valorMedio',
+  'Teorema Fundamental da Álgebra',
+  'Equações Diferenciais',
+  'Equação de Euler',
+  'Teorema de Fermat',
+  'Transformada de Fourier',
+  'Transformada de Laplace',
+  'Método de Newton-Raphson',
+  'Teorema de valor Médio',
   ];
 
   if (dificulty== 'EASY') {return charactersEasy;}
