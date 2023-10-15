@@ -15,23 +15,23 @@ const stopTime = [];
 const checkArray = () => {
   const charactersEasy = [
     'adicao',
-    'baskara',
-    'brioti',
+    'bhaskara',
+    'briot',
     'comparacao',
     'priGrau',
     'funcAfim',
-    'pitagora',
+    'pitagoras',
     'substituicao',
   ];
 
   const charactersMedium = [
     'complQuadrado',
-    'crammer',
+    'cramer',
     'escalonamento',
     'idArcosDuplos',
     'idPitagorica',
     'leiCossenos',
-    'leiSeno',
+    'leiSenos',
     'teoTales',
   ];
 
@@ -71,9 +71,6 @@ const checkEndGame = () => {
   if (disabledCards.length === 20) {
     const moviments = amountMov.reduce((x, acc) => x + acc, 0);
     localStorage.setItem('moviments', moviments);
-
-    clearInterval(this.loop);
-
     window.location.replace('/pages/winner.html');
   }
 }
