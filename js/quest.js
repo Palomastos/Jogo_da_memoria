@@ -75,6 +75,7 @@ const selectArray = () => {
 }
 
 
+
 // Função que serve para embaralhar os nomes dos cards e coloca-lós nos botões de forma que sempre estejam em uma nova posição e que não tenha opções repetidas. Além disso, garante que sempre vai haver a resposta certa na tela.
 const shufflesCardNames = () => {
     const cardsName = selectArray();
