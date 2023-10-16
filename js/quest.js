@@ -131,11 +131,11 @@ const redirectPage = (button) => {
         if (buttontext == selectedCardName) {
             alert('Você acertou! A imagem foi desbloqueada.');
             localStorage.setItem('validation', true);
-            //return window.location.replace('/pages/game.html');
+            return window.location.replace('/pages/game.html');
         }
         else {
             alert('Você errou! Tente novamente.');
-            //return window.location.replace('/pages/game.html');
+            return window.location.replace('/pages/game.html');
         }
     }
     else if (button == 'button2') {
@@ -143,11 +143,11 @@ const redirectPage = (button) => {
         if (buttontext == selectedCardName) {
             alert('Você acertou! A imagem foi desbloqueada.');
             localStorage.setItem('validation', true);
-            //return window.location.replace('/pages/game.html');
+            return window.location.replace('/pages/game.html');
         }
         else {
             alert('Você errou! Tente novamente.');
-            //return window.location.replace('/pages/game.html');
+            return window.location.replace('/pages/game.html');
         }
     }
     else if (button == 'button3') {
@@ -155,11 +155,11 @@ const redirectPage = (button) => {
         if (buttontext == selectedCardName) {
             alert('Você acertou! A imagem foi desbloqueada.');
             localStorage.setItem('validation', true);
-            //return window.location.replace('/pages/game.html');
+            return window.location.replace('/pages/game.html');
         }
         else {
             alert('Você errou! Tente novamente.');
-            //return window.location.replace('/pages/game.html');
+            return window.location.replace('/pages/game.html');
         }
     }
     else if (button == 'button4') {
@@ -167,11 +167,11 @@ const redirectPage = (button) => {
         if (buttontext == selectedCardName) {
             alert('Você acertou! A imagem foi desbloqueada.');
             localStorage.setItem('validation', true);
-            //return window.location.replace('/pages/game.html');
+            return window.location.replace('/pages/game.html');
         }
         else {
             alert('Você errou! Tente novamente.');
-            //return window.location.replace('/pages/game.html');
+            return window.location.replace('/pages/game.html');
         }
     }
 }

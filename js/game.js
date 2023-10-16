@@ -10,10 +10,6 @@ const validation = localStorage.getItem('validation');
 const accountant = localStorage.getItem('accountant');
 
 
-// Array que vai armazenar a quantidade de movimentos que o player fará.
-const amountMov = [];
-
-
 // Função criada para retornar uma lista de acordo com a dificultade escolhida. Essa lista vai conter os nomes dos card.
 const selectArray = () => {
   const cardsNameEasy = [
@@ -82,8 +78,6 @@ const checkEndGame = () => {
 
 
   if (disabledCards.length === 16) {
-    const moviments = amountMov.reduce((x, acc) => x + acc, 0);
-    localStorage.setItem('moviments', moviments);
 
     window.location.replace('/pages/winner.html');
   }
@@ -95,7 +89,6 @@ const checkCards = () => {
   const secondName = secondCard.getAttribute('data-name');
 
   if (firstName === secondName) {
-    amountMov.push(1);
 
     firstCard.firstChild.classList.add('disabled-card');
     secondCard.firstChild.classList.add('disabled-card');
@@ -107,7 +100,6 @@ const checkCards = () => {
 
   } else {
     setTimeout(() => {
-      amountMov.push(1);
 
       firstCard.classList.remove('reveal-card');
       secondCard.classList.remove('reveal-card');
@@ -136,6 +128,18 @@ const revealCard = ({ target }) => {
     secondCard = target.parentNode;
 
     checkCards();
+  }
+}
+
+
+const revealImgCard = () => {
+  if (validation == true && cardName != null) {
+    const cardTarget = document.querySelector(`#${cardName}`);
+    cardTarget.classList.remove('unfocused');
+    
+    
+
+    localStorage.setItem('validation', false);
   }
 }
 
@@ -169,8 +173,10 @@ const createCard = (name) => {
   
     card.addEventListener('click', revealCard);
     card.setAttribute('data-name', name);
-  
+    
+
     front.style.backgroundImage = `url('/images/${difficulty}/${name}.jpg')`;
+    front.classList.add('unfocused');
 
     return card;
   }
@@ -200,4 +206,5 @@ const loadGame = () => {
 window.onload = () => {
   spanPlayer.innerHTML = localStorage.getItem(`player${accountant}`);
   loadGame();
+  revealImgCard();
 }
