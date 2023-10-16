@@ -15,6 +15,7 @@ Trata-se de um Jogo da Memória integrado com outro jogo famoso, o "Quem sou eu?
 A temática escolhida foi matemática, no qual será explorado fórmulas, teoremas e funções.
 O jogo funciona da seguinte forma:
 O jogador cria seu NickName no login (Com quatro ou mais caracteres) e seleciona a dificuldade que desejar:
+
 * Easy (Fácil)
 * Medium (Médio)
 * Hard (Difícil)
