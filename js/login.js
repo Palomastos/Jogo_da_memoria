@@ -58,6 +58,7 @@ const redirectPage = (event) => {
   const choosedDificulty = checkDificulty();
   localStorage.setItem('dificulty', choosedDificulty);
   localStorage.setItem(`${newPlayer}`, inputName.value);
+  localStorage.setItem('validation', false);
 
   window.location.replace('/pages/game.html');
 }
