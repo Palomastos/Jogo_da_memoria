@@ -1,11 +1,10 @@
 // A const 'accountant' verifica a rodada que o player está, servindo para auxiliar em varias funções e a organizar as informações.
-const accountant = localStorage.getItem('acc');
+const accountant = localStorage.getItem('accountant');
 
 
 // Pegando os dados salvos no localStorage.
 const dificultyStor = localStorage.getItem('dificulty');
 const movimentsStor = localStorage.getItem('moviments');
-const timeStor = localStorage.getItem(`time${accountant}`);
 const playerStor = localStorage.getItem(`player${accountant}`);
 
 
@@ -16,7 +15,6 @@ const form2 = document.querySelector('.form2');
 
 // Pegando o local onde irá os dados salvos.
 const player = document.querySelector('#name');
-const time = document.querySelector('#time');
 const dificulty = document.querySelector('#dificulty');
 const moviments = document.querySelector('#moviments');
 
@@ -27,13 +25,12 @@ const playerSecond = document.querySelector('.second');
 const playerThree = document.querySelector('.three');
 
 
-// A const 'timeStorage' vai armazenar todos os tempos que serão salvos no local storage.
-const timeStorage = [];
-// A const 'threeWinnerPlayers' é uma Array que vai receber os 3 player player vencedores, servindo para adicionar, postiormente, lá nas suas devidas posições.
+
+// A Array 'threeWinnerPlayers' vai armazenar os 3 player que ganharam com o menor N° de movimentos, servindo para adicionar, posteriormente, nas suas devidas posições.
 const threeWinnerPlayers = [];
 
 
-// Função que verifica a dificuldade e adiciona a cor correspondente a dificultade no que aparecer em 'dificulty'.
+// Função que verifica a dificuldade e adiciona a cor correspondente.
 const checkDificulty = () => {
     if (dificultyStor == 'EASY') {
         dificulty.classList.add('easy');
@@ -108,7 +105,7 @@ const setNameRank = () => {
 }
 
 
-// Função para redirecionar o player para a tela de login a fim de ter uma nova tentativa, caso queira. Além disso, ela desabilita o comportamento padrão do <form>.
+// Função que serve para redirecionar o player para a tela de login para recomeçar. Além disso, ela desabilita o comportamento padrão do <form>.
 const redirectPage = (event) => {
     event.preventDefault();
 
@@ -116,7 +113,7 @@ const redirectPage = (event) => {
 }
 
 
-// Função para resetar os dados já salvos no localStorage, limpando o ranking. Além disso, ela desabilita o comportamento padrão do <form>.
+// Função que serve para limpar os dados que estão armazenados no localStorage, recarregando a pág após isso Além disso, ela desabilita o comportamento padrão do <form>.
 const clearStorage = (event) => {
     event.preventDefault();
 
@@ -125,7 +122,7 @@ const clearStorage = (event) => {
 }
 
 
-// Adcionando uma verificação para, quando o form for enviado, executar a função que está no segundo parâmetro.
+// Adcionando uma verificação para quando o form for enviado, executar a função que está no segundo parâmetro.
 form1.addEventListener('submit', redirectPage);
 form2.addEventListener('submit', clearStorage);
 
@@ -133,7 +130,6 @@ form2.addEventListener('submit', clearStorage);
 // Comnando para atrasar o carregamento do que foi passado para ele, sendo carregado somente quando todos os outros arquivos forem carregados, a fim de evitar erros no carregamento dos dados.
 window.onload = () => {
     moviments.innerHTML = movimentsStor;
-    time.innerHTML = timeStor;
     dificulty.innerHTML = dificultyStor;
     player.innerHTML = playerStor;
 

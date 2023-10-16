@@ -7,15 +7,18 @@ const buttonQ2 = document.querySelector('#btn-q2');
 const buttonQ3 = document.querySelector('#btn-q3');
 const buttonQ4 = document.querySelector('#btn-q4');
 
+
 // Pegando a parte do texto que aparecerá nos botões, vão ser usados para modificar as palavras que vão aparecer nos botões.
 const spanQ1 = document.querySelector('#spanq1');
 const spanQ2 = document.querySelector('#spanq2');
 const spanQ3 = document.querySelector('#spanq3');
 const spanQ4 = document.querySelector('#spanq4');
 
+
 // Pegando o nome do card da outra página e a dificuldade escolhida.
-const selectedCardName = localStorage.getItem('character');
+const selectedCardName = localStorage.getItem('cardName');
 const dificulty = localStorage.getItem('dificulty');
+
 
 // Função criada para selecionar a imagem da dica correspondente ao card selecionado.
 const selectImg = (CardName, Dificulty) => {

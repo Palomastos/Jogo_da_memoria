@@ -1,17 +1,20 @@
+// Pegando a parte desejada do html.
 const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
-const timer = document.querySelector('.timer');
-const dificulty = localStorage.getItem('dificulty');
 
 
-const character = localStorage.getItem('character')
+// Pegando os itens que estão armazenados no localStorage.
+const difficulty = localStorage.getItem('difficulty');
+const cardName = localStorage.getItem('cardName');
 const validation = localStorage.getItem('validation');
-const accountant = localStorage.getItem('acc');
+const accountant = localStorage.getItem('accountant');
+
+
+// Array que vai armazenar a quantidade de movimentos que o player fará.
 const amountMov = [];
-const stopTime = [];
 
 
-//
+// Função criada para retornar uma lista de acordo com a dificultade escolhida. Essa lista vai conter os nomes dos card.
 const selectArray = () => {
   const cardsNameEasy = [
   'Método da Adição',
@@ -47,19 +50,20 @@ const selectArray = () => {
   ];
 
 
-  if (dificulty == 'EASY') {
+  if (difficulty == 'EASY') {
       return cardsNameEasy;
   }
-  else if (dificulty == 'MEDIUM') {
+  else if (difficulty == 'MEDIUM') {
       return cardsNameMedium;
   }
   else {
       return cardsNameHard;
   }
 }
-const characters = selectArray();
+const difficultyArray = selectArray();
 
 
+// Função que vai ser utilizada para criar elementos html posteriormente.
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
   element.className = className;
@@ -67,11 +71,12 @@ const createElement = (tag, className) => {
 }
 
 
+// Os let serão usados para armazenar os cads selecionados e compará-los. Por existir a necessidade dessa variabilidade, a melhor opção encontrada foi manter-los assim, sem trocar por um const.
 let firstCard = '';
 let secondCard = '';
 
 
-
+// Função que aramazena a quantidade de cards disabilitados na const 'disabledCards' e verefica se todos cards foram desabilitados. Caso todos os cards estejam desabilitados, ela soma todos os movimentos realizados pelo o player e armazena em 'moviments', no localStorage. Por fim, redireciona para a pág winner.
 const checkEndGame = () => {
   const disabledCards = document.querySelectorAll('.disabled-card');
 
@@ -79,18 +84,17 @@ const checkEndGame = () => {
   if (disabledCards.length === 16) {
     const moviments = amountMov.reduce((x, acc) => x + acc, 0);
     localStorage.setItem('moviments', moviments);
-    stopTime.push(1);
 
     window.location.replace('/pages/winner.html');
   }
 }
 
-
+// Função que verifica se os card selecionados pelo o player são iguais, desabilitando-os (adicionando uma clsas pra isso) caso isso seja verdadeiro e os mantendo habilitados caso isso seja falso. Ela também é responsavel por esvaziar os let. Além disso, a cada chamada dessa função, é verificado se o jogo acabou ou não.
 const checkCards = () => {
-  const firstCharacter = firstCard.getAttribute('data-character');
-  const secondCharacter = secondCard.getAttribute('data-character');
+  const firstName = firstCard.getAttribute('data-name');
+  const secondName = secondCard.getAttribute('data-name');
 
-  if (firstCharacter === secondCharacter) {
+  if (firstName === secondName) {
     amountMov.push(1);
 
     firstCard.firstChild.classList.add('disabled-card');
@@ -116,6 +120,8 @@ const checkCards = () => {
 
 }
 
+
+// Função que serve para revelar o card selecionado pelo o player, pegando a parte html e adicionando a class 'reveal-card', caso ela não possua. Essa função também é responsável por preencher os let.
 const revealCard = ({ target }) => {
   if (target.parentNode.className.includes('reveal-card')) {
     return;
@@ -133,14 +139,17 @@ const revealCard = ({ target }) => {
   }
 }
 
-const openPagesDicas = (event) => {
-  localStorage.setItem('character', event);
+
+// Função que serve para armazenar o nome do card em que o botão 'Dicas' foi clicado, redirecionando para a pág de perguntas.
+const openPagesDicas = (name) => {
+  localStorage.setItem('cardName', name);
 
   window.location.replace('/pages/quest.html');
 }
 
 
-const createCard = (character) => {
+// Função que cria a parte html dos card. É passado para ela um nome e, apartir disso, ela cria divs já contendo a class desejada, o botão de dicas, um comando para ser executado quando o card for clicado e adiciona a imagem correspondente ao nome passado.
+const createCard = (name) => {
     const card = createElement('div', 'card');
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
@@ -149,62 +158,46 @@ const createCard = (character) => {
 
     button.classList.add('face', 'button');
     button.setAttribute('type', 'submit');
-    button.setAttribute('id', `${character}`);
-    button.setAttribute('onclick', `openPagesDicas('${character}')`);
+    button.setAttribute('id', `${name}`);
+    button.setAttribute('onclick', `openPagesDicas('${name}')`);
     button.textContent = 'Dicas';
 
 
     card.appendChild(front);
     card.appendChild(button);
     card.appendChild(back);
-    //card.appendChild(block);
   
     card.addEventListener('click', revealCard);
-    card.setAttribute('data-character', character);
+    card.setAttribute('data-name', name);
   
-    front.style.backgroundImage = `url('/images/${dificulty}/${character}.jpg')`;
+    front.style.backgroundImage = `url('/images/${difficulty}/${name}.jpg')`;
 
     return card;
   }
 
 
-
+// Função que serve para duplicar e embaralhar os cards, passando os cards, um por um, para a função 'createCard'.
 const loadGame = () => {
-  const duplicateCharacters = [...characters, ...characters];
+  const duplicateDifficultyArray = [...difficultyArray, ...difficultyArray];
 
-  const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
+  const shuffledArray = duplicateDifficultyArray.sort(() => Math.random() - 0.5);
 
-  const creaftingCard = ([characters, ...otherscharacter], acc=0)=> {
-    if(acc==shuffledArray.length) {
+  // Versão funcional do ForEach(), que vai repassar os cards para 'createCard'.
+  const creaftingCard = ([name, ...othersname], acc=0)=> {
+    if(acc == shuffledArray.length) {
       return;
     }
     else {
-      const card = createCard(characters);
+      const card = createCard(name);
       grid.appendChild(card);
-      return creaftingCard(otherscharacter, acc+1);
+      return creaftingCard(othersname, acc+1);
     }
   }
   creaftingCard(shuffledArray);
 }
 
-
-const startTimer = () => {
-    if (stopTime.length == 1){
-      return;
-    }
-    else {
-      return setTimeout(()=> {
-        const currentTime = +timer.innerHTML;
-        timer.innerHTML = currentTime + 1;
-        localStorage.setItem(`time${accountant}`, currentTime);
-        startTimer();
-      }, 1000);
-    }
-  }
-
-  
+// Comando usado para fazer o carregamento da função passada apenas depois de todo conteúdo for carregado, evitando alguns erros indesejados.
 window.onload = () => {
   spanPlayer.innerHTML = localStorage.getItem(`player${accountant}`);
-  startTimer();
   loadGame();
 }
