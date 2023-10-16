@@ -1,4 +1,5 @@
- Quem sou eu? Fórmula de Baskara 
+* Easy
+Quem sou eu? Fórmula de Baskara 
 1- Resolvo equações de segundo grau
 2- Utilizo seus coeficientes
 3- Encontro raízes
@@ -8,38 +9,38 @@
 2- Uso a relação dos lados de um triângulo com ângulo reto.
 3- E a soma de dois lados ao quadrado é igual ao quadrado do lado maior
 
- Quem sou eu ? Método da adição
+ Quem sou eu ? Método da Adição
 1- Sou utilizado em sistemas lineares com duas incógnitas
 2- Normalmente, multiplica-se uma das equações por um nº
 3- Das duas equações dadas uma variável se anula
 
-Quem sou eu ? Método da substituição
+Quem sou eu ? Método da Substituição
 1- Sou utilizado em sistemas lineares com duas incógnitas
 2- Uma variável é isolada
 3- O resultado da segunda variável depende da primeira
 
- Quem sou eu ? Método da comparação
+ Quem sou eu ? Método da Comparação
 1- Sou utilizado em sistemas lineares com duas incógnitas
 2- Uma variável é isolada no sistema
 3- As variáveis são comparadas em ambas equações
 
- Quem sou eu ? Equação do primeiro grau
+ Quem sou eu ? Equação do Primeiro Grau
 1- Ajudo a encontrar um valor desconhecido
 2- Os elementos desconhecidos são isolados
 3- Os dois lados são iguais
 
- Quem sou eu ? Função afim
+ Quem sou eu ? Função Afim
 1- Represento a taxa de crescimento ou taxa de variação
 3- Encontro o valor do coeficinte linear
 
- Quem sou eu ? Dispositivo Briot Rufinni
+ Quem sou eu ? Dispositivo Briot-Ruffini
 1- Sou usado para fazer divisão de polinômio
 2- Necessito de pelo menos uma raiz real para aplicação
 3- Reduzo o grau do polinômio
 
+* Medium
 
-
-  Quem sou eu ? Método de completar quadrados
+  Quem sou eu ? Método de Completar Quadrados
 1- Transformo uma equação de grau 2 em trinômio perfeito
 2- Resulto num produto notável
 3- Sou útil para reescrever uma função quadrática
@@ -49,40 +50,41 @@ Quem sou eu ? Método da substituição
 2- Encontro valores desconhecidos em triângulos.
 3- Segmentos da lateral são proporcionais.
 
- Quem sou eu? Leis dos senos.
+ Quem sou eu? Lei dos Senos.
 1- Utilizo dois lados e o ângulo oposto a um desses lados.
 2- Uso dois ângulos e o lado oposto a um desses ângulos.
 3- Uso a razão entre eles.
 
- Quem sou eu? Identidade trigonométrica Pitagórica
+ Quem sou eu? Identidade Trigonométrica Pitagórica
 1- Simplifico expressões trigonométricas
 2- Sou derivada do Teorema de Pitágoras 
 
- Quem sou eu? Identidade de arcos duplos
+ Quem sou eu? Identidade de Arcos Duplos
 1- Simplifico expressões trigonométricas
 2- Utilizo dois ângulos menores chamado de arcos
    sin(2θ)= 2sin(θ)cos(θ)
 
- Quem sou eu? Lei dos cossenos
+ Quem sou eu? Lei dos Cossenos
 1- Encontro o comprimento do terceiro lado do triângulo
 2-Normalmente,sou aplicada para triângulo não retângulo.
 
- Quem sou eu? método de escalonamento
+ Quem sou eu? Método de Escalonamento
 1- Resolvo equações lineares com três funções e incógnitas
 2- Faço uso de manipulações algébricas
 3- Utilizo matrizes 3X3
 
-Quem sou eu? Regra de Crammer
+Quem sou eu? Regra de Cramer
 1- Resolvo equações lineares com três funções e incógnitas
 2- Calculo o determinante da matriz incompleta e suas variações
 3- As incógnitas são encontadas pela razão dos determinantes
 
+* Hard
 
  Quem sou eu? Transformada de Fourier
 1- Permito analisar de forma adequada funções periódicas
 2- sou útil em situações onde o comportamento de um sinal varia com o tempo ou espaço
  
- Quem sou eu? Teorema fundamental da álgebra
+ Quem sou eu? Teorema Fundamental da Álgebra
 1- A quantidade de raízes reais ou complexas, está relacionada com o grau do polinômio
 
  Quem sou eu? Transformada de Laplace
@@ -96,7 +98,7 @@ Quem sou eu? Regra de Crammer
  Quem sou eu? Teorema do valor Médio
 1- Garanto que exista pelo menos uma raiz no intervalo fechado
 
- Quem sou eu? Equações diferenciais 
+ Quem sou eu? Equações Diferenciais 
 1- Modelam fenômenos que envolvem taxas de variação
 
  Quem sou eu? Equação de Euler 
