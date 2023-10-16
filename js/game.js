@@ -25,10 +25,10 @@ const checkArray = () => {
   ];
 
   const charactersMedium = [
-    'Método de Completar Quadrado',
+    'Método de Completar Quadrados',
     'Regra de Cramer',
     'Método de Escalonamento',
-    'Identdade de Arcos Duplos',
+    'Identidade de Arcos Duplos',
     'Identidade Trigonométrica Pitagórica',
     'Lei dos Cossenos',
     'Lei dos Senos',
