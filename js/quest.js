@@ -19,13 +19,24 @@ const dificulty = localStorage.getItem('dificulty');
 
 // Função criada para selecionar a imagem da dica correspondente ao card selecionado.
 const selectImg = (CardName, Dificulty) => {
-    boximg.style.backgroundImage = `url('/images/${Dificulty}/Dicas/${CardName}.jpg')`;
+    boximg.style.backgroundImage = `url('/images/${Dificulty}/dicas/${CardName}.jpg')`;
 }
 selectImg(selectedCardName, dificulty);
 
 
 // Função criada para retornar uma lista de acordo com a dificultade escolhida. Essa lista vai conter os nomes dos card.
 const selectArray = () => {
+    const cardsNameEasy = [
+    'Método da Adição',
+    'Fórmula de Bhaskara',
+    'Dispositivo Briot-Ruffini',
+    'Método da Comparação',
+    'Equação do Primeiro Grau',
+    'Função Afim',
+    'Teorema de Pitágoras',
+    'Método da Substituição',
+    ];
+
     const cardsNameMedium = [
     'Completar Quadrados',
     'Regra de Crammer',
@@ -37,9 +48,26 @@ const selectArray = () => {
     'Teorema de Tales',
     ];
 
+    const cardsNameHard = [
+    'Teorema Fundamental da Álgebra',
+    'Equações Diferenciais',
+    'Equação de Euler',
+    'Teorema de Fermat',
+    'Transformada de Fourier',
+    'Transformada de Laplace',
+    'Metódo de Newton-Raphson',
+    'Teorema de Valor Médio',
+    ];
 
-    if (dificulty == 'MEDIUM') {
+
+    if (dificulty == 'EASY') {
+        return cardsNameEasy;
+    }
+    else if (dificulty == 'MEDIUM') {
         return cardsNameMedium;
+    }
+    else {
+        return cardsNameHard;
     }
 }
 

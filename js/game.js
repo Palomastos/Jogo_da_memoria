@@ -11,59 +11,53 @@ const amountMov = [];
 const stopTime = [];
 
 
-const removeBlurImg = () => {
-  if (validation == true && character != undefined) {
-
-  }
-}
-
-
 //
-const checkArray = () => {
-  const charactersEasy = [
-    'Adição',
-    'Bhaskara',
-    'Briot Rufinni',
-    'Metódo da Comparação',
-    'Equação do Primeiro Grau',
-    'Função Afim',
-    'Teorema de Pitágoras',
-    'Metódo da Substituição',
+const selectArray = () => {
+  const cardsNameEasy = [
+  'Método da Adição',
+  'Fórmula de Bhaskara',
+  'Dispositivo Briot-Ruffini',
+  'Método da Comparação',
+  'Equação do Primeiro Grau',
+  'Função Afim',
+  'Teorema de Pitágoras',
+  'Método da Substituição',
   ];
 
-  const charactersMedium = [
-    'completarquadrados',
-    'regradecrammer',
-    'metódodoescalonamento',
-    'identidadedearcosduplos',
-    'identidadetrigonometrica',
-    'leidoscossenos',
-    'leidossenos',
-    'teoremadetales',
+  const cardsNameMedium = [
+  'Completar Quadrados',
+  'Regra de Crammer',
+  'Metódo do Escalonamento',
+  'Identidade de Arcos Duplos',
+  'Identidade Trigonometrica',
+  'leidoscossenos',
+  'Lei dos Senos',
+  'Teorema de Tales',
   ];
 
-  const charactersHard = [
-  'algebra',
-  'edDiferenciais',
-  'euler',
-  'fermat',
-  'fourier',
-  'laplace',
-  'newton',
-  'valorMedio',
+  const cardsNameHard = [
+  'Teorema Fundamental da Álgebra',
+  'Equações Diferenciais',
+  'Equação de Euler',
+  'Teorema de Fermat',
+  'Transformada de Fourier',
+  'Transformada de Laplace',
+  'Metódo de Newton-Raphson',
+  'Teorema de Valor Médio',
   ];
 
-  if (dificulty== 'EASY') {
-    return charactersEasy;
+
+  if (dificulty == 'EASY') {
+      return cardsNameEasy;
   }
-  else if (dificulty=='MEDIUM') {
-    return charactersMedium;
+  else if (dificulty == 'MEDIUM') {
+      return cardsNameMedium;
   }
   else {
-    return charactersHard;
+      return cardsNameHard;
   }
 }
-const characters = checkArray();
+const characters = selectArray();
 
 
 const createElement = (tag, className) => {
@@ -140,16 +134,10 @@ const revealCard = ({ target }) => {
 }
 
 const openPagesDicas = (event) => {
-  const htmlcolection = event;
-  const element = htmlcolection[1];
-  const id = element.id;
-
-  localStorage.setItem('character', id);
+  localStorage.setItem('character', event);
 
   window.location.replace('/pages/quest.html');
 }
-
-
 
 
 const createCard = (character) => {
@@ -162,7 +150,7 @@ const createCard = (character) => {
     button.classList.add('face', 'button');
     button.setAttribute('type', 'submit');
     button.setAttribute('id', `${character}`);
-    button.setAttribute('onclick', `openPagesDicas(${character})`);
+    button.setAttribute('onclick', `openPagesDicas('${character}')`);
     button.textContent = 'Dicas';
 
 
@@ -219,5 +207,4 @@ window.onload = () => {
   spanPlayer.innerHTML = localStorage.getItem(`player${accountant}`);
   startTimer();
   loadGame();
-  removeBlurImg();
 }
