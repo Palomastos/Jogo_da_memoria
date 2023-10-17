@@ -1,13 +1,11 @@
-// Pegando a parte desejada do html.
+// Pegando a parte desejada do HTML.
 const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
 
 
 // Pegando os itens que estão armazenados no localStorage.
 const difficulty = localStorage.getItem('difficulty');
-const cardName = localStorage.getItem('cardName');
 const validation = localStorage.getItem('validation');
-const accountant = localStorage.getItem('accountant');
 
 
 // Função criada para retornar uma lista de acordo com a dificultade escolhida. Essa lista vai conter os nomes dos card.
@@ -59,7 +57,7 @@ const selectArray = () => {
 const difficultyArray = selectArray();
 
 
-// Função que vai ser utilizada para criar elementos html posteriormente.
+// Função que vai ser utilizada para criar elementos no HTML posteriormente.
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
   element.className = className;
@@ -78,12 +76,14 @@ const checkEndGame = () => {
 
 
   if (disabledCards.length === 16) {
+    alert('Parabéns, você ganhou!');
+    localStorage.clear();
 
-    window.location.replace('/pages/winner.html');
+    window.location.replace('/pages/index.html')
   }
 }
 
-// Função que verifica se os card selecionados pelo o player são iguais, desabilitando-os (adicionando uma clsas pra isso) caso isso seja verdadeiro e os mantendo habilitados caso isso seja falso. Ela também é responsavel por esvaziar os let. Além disso, a cada chamada dessa função, é verificado se o jogo acabou ou não.
+// Função que verifica se os card selecionados pelo o player são iguais, desabilitando-os (adicionando uma class) caso isso seja verdadeiro e os mantendo habilitados caso isso seja falso. Ela também é responsavel por esvaziar os let. Além disso, a cada chamada dessa função, é verificado se o jogo acabou ou não.
 const checkCards = () => {
   const firstName = firstCard.getAttribute('data-name');
   const secondName = secondCard.getAttribute('data-name');
@@ -132,21 +132,11 @@ const revealCard = ({ target }) => {
 }
 
 
-const revealImgCard = () => {
-  if (validation == true && cardName != null) {
-    const cardTarget = document.querySelector(`#${cardName}`);
-    cardTarget.classList.remove('unfocused');
-    
-    
-
-    localStorage.setItem('validation', false);
-  }
-}
-
-
 // Função que serve para armazenar o nome do card em que o botão 'Dicas' foi clicado, redirecionando para a pág de perguntas.
 const openPagesDicas = (name) => {
-  localStorage.setItem('cardName', name);
+  localStorage.setItem(`cardName`, name);
+
+
 
   window.location.replace('/pages/quest.html');
 }
@@ -202,9 +192,9 @@ const loadGame = () => {
   creaftingCard(shuffledArray);
 }
 
+
 // Comando usado para fazer o carregamento da função passada apenas depois de todo conteúdo for carregado, evitando alguns erros indesejados.
 window.onload = () => {
-  spanPlayer.innerHTML = localStorage.getItem(`player${accountant}`);
+  spanPlayer.innerHTML = localStorage.getItem(`player`);
   loadGame();
-  revealImgCard();
 }

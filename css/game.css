@@ -114,3 +114,7 @@ header {
   align-items: center;
   
 }
+
+.unfocused {
+  filter: blur(10px);
+}

@@ -16,15 +16,15 @@ const spanQ4 = document.querySelector('#spanq4');
 
 
 // Pegando o nome do card da outra página e a dificuldade escolhida.
-const selectedCardName = localStorage.getItem('cardName');
-const dificulty = localStorage.getItem('dificulty');
+const selectedCard = localStorage.getItem(`cardName`)
+const difficulty = localStorage.getItem('difficulty');
 
 
 // Função criada para selecionar a imagem da dica correspondente ao card selecionado.
-const selectImg = (CardName, Dificulty) => {
-    boximg.style.backgroundImage = `url('/images/${Dificulty}/dicas/${CardName}.jpg')`;
+const selectImg = (CardName, Difficulty) => {
+    boximg.style.backgroundImage = `url('/images/${Difficulty}/dicas/${CardName}.jpg')`;
 }
-selectImg(selectedCardName, dificulty);
+selectImg(selectedCard, difficulty);
 
 
 // Função criada para retornar uma lista de acordo com a dificultade escolhida. Essa lista vai conter os nomes dos card.
@@ -63,10 +63,10 @@ const selectArray = () => {
     ];
 
 
-    if (dificulty == 'EASY') {
+    if (difficulty == 'EASY') {
         return cardsNameEasy;
     }
-    else if (dificulty == 'MEDIUM') {
+    else if (difficulty == 'MEDIUM') {
         return cardsNameMedium;
     }
     else {
@@ -81,7 +81,7 @@ const shufflesCardNames = () => {
     const cardsName = selectArray();
     const copyCardsName = [...cardsName];
     const shuffledArray = copyCardsName.sort(() => Math.random() - 0.5);
-    const indexNameTarget = shuffledArray.indexOf(`${selectedCardName}`);
+    const indexNameTarget = shuffledArray.indexOf(`${selectedCard}`);
    
     // Função que pega indexs aleatórios entre 0 a 10, servindo para sempre ter uma aleatóriedade na disposição dos nomes que vão aparecer nos botões. É ela a responsável por adicionar os nomes nos botões de forma aleatória. Além disso, pega o index do nome do card que foi selecionado na outra tela para adiciona-lo como uma opção de resposta.
     const addShuffledNamesButton = ([...names]) => {
@@ -128,49 +128,53 @@ const shufflesCardNames = () => {
 const redirectPage = (button) => {
     if (button == 'button1') {
         const buttontext = spanQ1.innerHTML;
-        if (buttontext == selectedCardName) {
+        if (buttontext == selectedCard) {
             alert('Você acertou! A imagem foi desbloqueada.');
-            localStorage.setItem('validation', true);
+            
             return window.location.replace('/pages/game.html');
         }
         else {
             alert('Você errou! Tente novamente.');
+
             return window.location.replace('/pages/game.html');
         }
     }
     else if (button == 'button2') {
         const buttontext = spanQ2.innerHTML;
-        if (buttontext == selectedCardName) {
+        if (buttontext == selectedCard) {
             alert('Você acertou! A imagem foi desbloqueada.');
-            localStorage.setItem('validation', true);
+            
             return window.location.replace('/pages/game.html');
         }
         else {
             alert('Você errou! Tente novamente.');
+
             return window.location.replace('/pages/game.html');
         }
     }
     else if (button == 'button3') {
         const buttontext = spanQ3.innerHTML;
-        if (buttontext == selectedCardName) {
+        if (buttontext == selectedCard) {
             alert('Você acertou! A imagem foi desbloqueada.');
-            localStorage.setItem('validation', true);
+            
             return window.location.replace('/pages/game.html');
         }
         else {
             alert('Você errou! Tente novamente.');
+
             return window.location.replace('/pages/game.html');
         }
     }
     else if (button == 'button4') {
         const buttontext = spanQ4.innerHTML;
-        if (buttontext == selectedCardName) {
+        if (buttontext == selectedCard) {
             alert('Você acertou! A imagem foi desbloqueada.');
-            localStorage.setItem('validation', true);
+            
             return window.location.replace('/pages/game.html');
         }
         else {
             alert('Você errou! Tente novamente.');
+
             return window.location.replace('/pages/game.html');
         }
     }
@@ -182,7 +186,6 @@ buttonQ1.setAttribute('onclick', `redirectPage('button1')`);
 buttonQ2.setAttribute('onclick', `redirectPage('button2')`);
 buttonQ3.setAttribute('onclick', `redirectPage('button3')`);
 buttonQ4.setAttribute('onclick', `redirectPage('button4')`);
-
 
 
 // Comando usado para fazer o carregamento da função passada apenas depois de todo conteúdo for carregado, evitando alguns erros indesejados.

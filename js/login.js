@@ -35,29 +35,13 @@ const checkDificulty = () => {
 }
 
 
-// Função que verifica se já tem um espaço ocupado por algum player e retorna uma string que vai se tornar um novo espaço no localStorage. Além disso, ela adiciona +1 em um contador no localStorage. O 'contador' vai servir para armazenar em qual rodada o player está.
-const createNewPlayer = (acc=0) => {
-  const player = localStorage.getItem(`player${acc}`);
-
-  if (player ==  null) {
-    localStorage.setItem('accountant', acc);
-    return `player${acc}`;
-  }  
-  else {
-    return createNewPlayer(acc+1);
-  }
-}
-
-
 // Função que redireciona para a pág do jogo. Além disso, retira o comportamento padrão do <form>. Por fim, salva (No localstorage) o player, a dificuldade selecionada e uma validação para usos posteriores.
 const redirectPage = (event) => {
   event.preventDefault();
-  
-  const newPlayer = createNewPlayer();
+
   const choosedDifficulty = checkDificulty();
   localStorage.setItem('difficulty', choosedDifficulty);
-  localStorage.setItem(`${newPlayer}`, inputName.value);
-  localStorage.setItem('validation', false);
+  localStorage.setItem('player', inputName.value);
 
   window.location.replace('/pages/game.html');
 }
